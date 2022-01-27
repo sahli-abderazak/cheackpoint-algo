@@ -2,27 +2,29 @@ ALGORITHM cheackpoint
 VAR
 charact,word,vowel:INTEGER;
 n:STRING;
+tab:array of char[6];
 BEGIN
   read(n) ;
-  i:=0
-for charact from 1 to length(n) do;
-   i:=i+1;
-   write(i)
+  charact:=0
+for charact from 0 to length(n)-1 do;
+   charact:=charact+1;
 END_FOR
-j:=0
-for word from 1 to length(n) do;
-IF (j[i]:="") THEN
-j:=j-1;    
-ELSE
-    j:=j+1;
+word:=0
+for word from 0 to length(n)-1 do;
+IF (word[i]:=" ") THEN
+word:=word+1;    
     END_FOR
 END_IF
-k:=0
-for vowel from 1 to length(n)do
-IF ( k[i] in ['a','e','y','o','u','i']) THEN
-    k:=k+1;
+vowel:=0
+tab:=["a","e","y","o","u","i"]
+for vowel from 0 to length(n-1) do
+IF ( vowel[i] in tab) THEN
+    vowel:=vowel+1;
     ELSE
-    k:=0,
+    vowel:=0,
 END_IF
 END_FOR
+write (vowel);
+write(word);
+write(charact)
 END
